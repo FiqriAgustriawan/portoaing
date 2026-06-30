@@ -1,36 +1,67 @@
 'use client';
 
-import { profileData } from '@/lib/data';
-
 export default function Experience() {
-  return (
-    <section className="content-section py-20 border-t border-neutral-100 dark:border-neutral-900" id="experience">
-      <div className="reveal">
-        <p className="section-label font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 mb-2">
-          03 — Experience
-        </p>
-        <h2 className="section-title font-mono text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 mb-10">
-          Where I've Been
-        </h2>
-      </div>
+  const experiences = [
+    {
+      role: 'Software Engineer Intern',
+      company: 'Ashari Tech',
+      companyUrl: 'https://ashari.tech',
+      period: '2024 — Present',
+      description:
+        'Developing modern web applications with Next.js, React, and TypeScript. Building scalable user interfaces and integrating backend APIs for production systems.',
+    },
+    {
+      role: 'BNSP Certified Web Developer',
+      company: 'BNSP Indonesia',
+      period: '2024',
+      description:
+        'Completed professional web development certification, validating expertise in standards-based web application development and industry best practices.',
+    },
+  ];
 
-      <div className="space-y-12">
-        {profileData.experiences.map((exp, i) => (
+  return (
+    <section className="py-24" id="experience">
+      <p
+        className="text-[11px] uppercase tracking-[0.2em] mb-2"
+        style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+      >
+        03 — Experience
+      </p>
+      <h2
+        className="text-2xl font-bold tracking-tight mb-10"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        Where I&apos;ve Been
+      </h2>
+
+      <div className="space-y-10">
+        {experiences.map((exp, i) => (
           <div
             key={i}
-            className="experience-item flex flex-col md:flex-row md:items-baseline justify-between border-b border-neutral-100 dark:border-neutral-900 pb-8 last:border-0 last:pb-0"
+            className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 md:gap-8 pb-10"
+            style={{
+              borderBottom:
+                i < experiences.length - 1
+                  ? '1px solid var(--border-color)'
+                  : 'none',
+            }}
           >
-            <div className="md:max-w-xl">
-              <h3 className="font-semibold text-neutral-900 dark:text-neutral-100 text-lg">
-                {exp.role}
-              </h3>
-              <p className="font-mono text-xs text-neutral-500 dark:text-neutral-500 mt-1 mb-4">
+            <div className="md:max-w-[480px]">
+              <h3 className="text-[17px] font-semibold mb-1">{exp.role}</h3>
+              <p
+                className="text-[12px] mb-4"
+                style={{
+                  color: 'var(--text-faint)',
+                  fontFamily: 'var(--font-mono)',
+                }}
+              >
                 {exp.companyUrl ? (
                   <a
                     href={exp.companyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors"
+                    className="underline hover:opacity-70 transition-opacity"
+                    style={{ color: 'var(--text-muted)' }}
                   >
                     {exp.company}
                   </a>
@@ -38,13 +69,25 @@ export default function Experience() {
                   exp.company
                 )}
               </p>
-              <p className="font-sans text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              <p
+                className="text-[14px] leading-relaxed"
+                style={{
+                  color: 'var(--text-muted)',
+                  fontFamily: 'var(--font-sans)',
+                }}
+              >
                 {exp.description}
               </p>
             </div>
-            <div className="font-mono text-xs text-neutral-400 dark:text-neutral-500 mt-2 md:mt-0">
+            <span
+              className="text-[12px] shrink-0 mt-1 md:mt-0"
+              style={{
+                color: 'var(--text-faint)',
+                fontFamily: 'var(--font-mono)',
+              }}
+            >
               {exp.period}
-            </div>
+            </span>
           </div>
         ))}
       </div>

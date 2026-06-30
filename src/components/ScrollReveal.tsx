@@ -5,48 +5,42 @@ import { useEffect, useRef, ReactNode } from 'react';
 interface ScrollRevealProps {
   children: ReactNode;
   className?: string;
-  stagger?: boolean;
+  delay?: number;
 }
 
-export default function ScrollReveal({ children, className = '', stagger = false }: ScrollRevealProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function ScrollReveal({
+  children,
+  className = '',
+  delay = 0,
+}: ScrollRevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            // Once revealed, we don't need to observe it anymore
-            observer.unobserve(entry.target);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Apply delay via setTimeout for staggered reveal
+          setTimeout(() => {
+            el.classList.add('is-visible');
+          }, delay);
+          observer.unobserve(el);
+        }
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px', // Trigger slightly before it fully enters viewport
+        rootMargin: '0px 0px -60px 0px',
       }
     );
 
-    const container = containerRef.current;
-    if (!container) return;
-
-    const items = stagger
-      ? container.querySelectorAll('.reveal-item')
-      : [container];
-
-    items.forEach((item) => observer.observe(item));
-
-    return () => {
-      items.forEach((item) => observer.unobserve(item));
-    };
-  }, [stagger]);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
 
   return (
-    <div
-      ref={containerRef}
-      className={`${stagger ? '' : 'reveal-effect'} ${className}`}
-    >
+    <div ref={ref} className={`reveal-effect ${className}`}>
       {children}
     </div>
   );

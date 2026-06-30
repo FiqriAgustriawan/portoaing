@@ -1,101 +1,159 @@
 'use client';
 
-import { profileData } from '@/lib/data';
-
 export default function Skills() {
-  const backendSkills = profileData.skills.filter(s => s.category === 'backend');
-  const frontendSkills = profileData.skills.filter(s => s.category === 'frontend');
-  const toolsSkills = profileData.skills.filter(s => s.category === 'tools');
-
   return (
-    <section className="content-section py-20 border-t border-neutral-100 dark:border-neutral-900" id="skills">
-      <div className="reveal">
-        <p className="section-label font-mono text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 mb-2">
-          02 — Expertise
-        </p>
-        <h2 className="section-title font-mono text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 mb-10">
-          What I Do
-        </h2>
+    <section className="py-24" id="skills">
+      <p
+        className="text-[11px] uppercase tracking-[0.2em] mb-2"
+        style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+      >
+        02 — Expertise
+      </p>
+      <h2
+        className="text-2xl font-bold tracking-tight mb-10"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        What I Do
+      </h2>
+
+      {/* 2-Column Skills Grid — matching andi.ltd */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        {/* Card 1: Backend & Database */}
+        <div
+          className="p-7 rounded-xl"
+          style={{
+            backgroundColor: 'var(--card-bg)',
+            border: '1px solid var(--border-color)',
+          }}
+        >
+          <p
+            className="text-[11px] uppercase tracking-[0.15em] mb-1"
+            style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+          >
+            Backend & Database
+          </p>
+          <p
+            className="text-[17px] font-medium mb-5"
+            style={{ fontFamily: 'var(--font-sans)' }}
+          >
+            API Engineering
+          </p>
+          <ul
+            className="space-y-2.5 text-[14px]"
+            style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-sans)' }}
+          >
+            {[
+              'RESTful API Design',
+              'Database Optimization',
+              'Server-Side Architecture',
+              'Authentication & Security',
+              'Microservices & Queue Systems',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2.5">
+                <span
+                  className="mt-[7px] w-[4px] h-[4px] rounded-full shrink-0"
+                  style={{ backgroundColor: 'var(--text-faint)' }}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Card 2: Frontend & DevOps */}
+        <div
+          className="p-7 rounded-xl"
+          style={{
+            backgroundColor: 'var(--card-bg)',
+            border: '1px solid var(--border-color)',
+          }}
+        >
+          <p
+            className="text-[11px] uppercase tracking-[0.15em] mb-1"
+            style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+          >
+            Frontend & DevOps
+          </p>
+          <p
+            className="text-[17px] font-medium mb-5"
+            style={{ fontFamily: 'var(--font-sans)' }}
+          >
+            Modern Stack
+          </p>
+          <ul
+            className="space-y-2.5 text-[14px]"
+            style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-sans)' }}
+          >
+            {[
+              'React & Next.js Applications',
+              'TypeScript Development',
+              'Responsive UI Engineering',
+              'Docker & Containerization',
+              'CI/CD & Deployment',
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2.5">
+                <span
+                  className="mt-[7px] w-[4px] h-[4px] rounded-full shrink-0"
+                  style={{ backgroundColor: 'var(--text-faint)' }}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      <div className="skills-grid grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        {/* Card 1: Backend */}
-        <div className="skill-card bg-neutral-50 dark:bg-neutral-950 p-8 rounded-xl border border-neutral-200/50 dark:border-neutral-800/50 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
-          <p className="skill-card-label font-mono text-xs uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
-            Backend Engineering
-          </p>
-          <p className="skill-card-title font-semibold text-neutral-900 dark:text-neutral-100 text-lg mb-6">
-            APIs & Architecture
-          </p>
-          <ul className="skill-list font-sans text-sm text-neutral-600 dark:text-neutral-400 space-y-3 list-none p-0 m-0">
-            {backendSkills.map((skill, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600"></span>
-                {skill.name}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Tech Badges Row — matching andi.ltd stack-badge style */}
+      <div
+        className="flex flex-wrap gap-2"
+        style={{ fontFamily: 'var(--font-mono)' }}
+      >
+        {[
+          { name: 'Laravel', url: 'https://github.com/FiqriAgustriawan?tab=repositories&q=&type=&language=php&sort=' },
+          { name: 'Golang', url: 'https://github.com/FiqriAgustriawan?tab=repositories&q=&type=&language=go&sort=' },
+          { name: 'Node.js' },
+          { name: 'React', url: 'https://github.com/FiqriAgustriawan?tab=repositories&q=&type=&language=typescript&sort=' },
+          { name: 'Next.js', url: 'https://github.com/FiqriAgustriawan?tab=repositories&q=&type=&language=typescript&sort=' },
+          { name: 'TypeScript', url: 'https://github.com/FiqriAgustriawan?tab=repositories&q=&type=&language=typescript&sort=' },
+          { name: 'MySQL' },
+          { name: 'PostgreSQL' },
+          { name: 'Docker' },
+          { name: 'Supabase' },
+          { name: 'Firebase' },
+          { name: 'Git' },
+          { name: 'Linux' },
+          { name: 'Tailwind CSS' },
+          { name: 'Vite' },
+        ].map((tech) => {
+          const commonClass =
+            'inline-block px-3 py-1.5 rounded text-[12px] transition-colors duration-200';
+          const commonStyle = {
+            border: '1px solid var(--badge-border)',
+            backgroundColor: 'var(--badge-bg)',
+            color: 'var(--text-muted)',
+          };
 
-        {/* Card 2: Frontend */}
-        <div className="skill-card bg-neutral-50 dark:bg-neutral-950 p-8 rounded-xl border border-neutral-200/50 dark:border-neutral-800/50 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
-          <p className="skill-card-label font-mono text-xs uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
-            Frontend Development
-          </p>
-          <p className="skill-card-title font-semibold text-neutral-900 dark:text-neutral-100 text-lg mb-6">
-            Interfaces & Interactivity
-          </p>
-          <ul className="skill-list font-sans text-sm text-neutral-600 dark:text-neutral-400 space-y-3 list-none p-0 m-0">
-            {frontendSkills.map((skill, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600"></span>
-                {skill.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Card 3: DevOps & Tools */}
-        <div className="skill-card bg-neutral-50 dark:bg-neutral-950 p-8 rounded-xl border border-neutral-200/50 dark:border-neutral-800/50 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
-          <p className="skill-card-label font-mono text-xs uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-2">
-            DevOps & Platform
-          </p>
-          <p className="skill-card-title font-semibold text-neutral-900 dark:text-neutral-100 text-lg mb-6">
-            Infrastructure & Tools
-          </p>
-          <ul className="skill-list font-sans text-sm text-neutral-600 dark:text-neutral-400 space-y-3 list-none p-0 m-0">
-            {toolsSkills.map((skill, i) => (
-              <li key={i} className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-neutral-400 dark:bg-neutral-600"></span>
-                {skill.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Tech badges row */}
-      <div className="stack-row flex flex-wrap gap-2.5 font-mono text-xs mt-8">
-        {profileData.skills.map((skill, i) => {
-          if (skill.url) {
+          if (tech.url) {
             return (
               <a
-                key={i}
-                href={skill.url}
+                key={tech.name}
+                href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="stack-badge bg-neutral-100/50 dark:bg-neutral-900/50 hover:bg-neutral-200/60 dark:hover:bg-neutral-800/60 text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-neutral-50 px-3 py-1.5 rounded border border-neutral-200/40 dark:border-neutral-800/40 transition-colors"
+                className={`${commonClass} hover:opacity-70`}
+                style={commonStyle}
               >
-                {skill.name}
+                {tech.name}
               </a>
             );
           }
           return (
             <span
-              key={i}
-              className="stack-badge bg-neutral-100/50 dark:bg-neutral-900/50 text-neutral-600 dark:text-neutral-400 px-3 py-1.5 rounded border border-neutral-200/40 dark:border-neutral-800/40"
+              key={tech.name}
+              className={commonClass}
+              style={commonStyle}
             >
-              {skill.name}
+              {tech.name}
             </span>
           );
         })}
