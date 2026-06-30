@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Muhammad Fiqri Agustriawan',
     images: [
       {
-        url: '/profile_Fiqri.jpeg',
+        url: '/profile_Fiqri-kacamata.jpeg',
         width: 150,
         height: 150,
         alt: 'Muhammad Fiqri Agustriawan',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     creator: '@fiqriagustriawan',
     title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
     description: 'Fullstack Software Engineer specializing in backend engineering.',
-    images: ['/profile_Fiqri.jpeg'],
+    images: ['/profile_Fiqri-kacamata.jpeg'],
   },
   icons: {
     icon: '/favicon.ico',
@@ -95,6 +95,7 @@ export default function RootLayout({
       <body
         className="antialiased relative"
         style={{ fontFamily: 'var(--font-sans)' }}
+        suppressHydrationWarning
       >
         <ScrollProgress />
         <CursorGlow />

@@ -28,7 +28,7 @@ export const profileData = {
   location: "Bandung, Indonesia",
   availability: "Open to Opportunities",
   email: "muhfiqri033@gmail.com",
-  photoUrl: "/profile_Fiqri.jpeg",
+  photoUrl: "/profile_Fiqri-kacamata.jpeg",
   bioShort: "Building **resilient APIs, optimized databases**, and scalable fullstack solutions. Focused on backend engineering, intelligent systems, and devops automation.",
   bioLong: [
     "I'm a **Fullstack Software Engineer** based in Bandung, Indonesia, specializing in backend engineering, cloud platforms, and DevOps automation. I love designing high-performance systems and building clean, maintainable web applications.",

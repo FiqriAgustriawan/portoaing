@@ -65,12 +65,22 @@ body {
 #grid-bg {
   position: fixed;
   inset: 0;
-  z-index: 1;
-  background-image:
-    radial-gradient(circle at 1px 1px, var(--border-color) 1px, transparent 0);
-  background-size: 24px 24px;
+  z-index: 0;
   pointer-events: none;
-  opacity: 0.5;
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 52px 52px;
+  opacity: 0;
+  animation: 1.2s 0.3s forwards gridFadeIn;
+  -webkit-mask-image: radial-gradient(75% 75% at 50% 40%, #000 20%, #0000 100%);
+  mask-image: radial-gradient(75% 75% at 50% 40%, #000 20%, #0000 100%);
+}
+
+@keyframes gridFadeIn {
+  to {
+    opacity: 0.6;
+  }
 }
 
 /* ========================================

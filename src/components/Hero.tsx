@@ -18,12 +18,12 @@ export default function Hero() {
           {/* Profile Photo */}
           <div className="shrink-0 relative w-[96px] h-[96px] rounded-md overflow-hidden">
             <Image
-              src="/profile_Fiqri.jpeg"
+              src="/profile_Fiqri-kacamata.jpeg"
               alt="Muhammad Fiqri Agustriawan"
               fill
               sizes="96px"
               priority
-              className="object-cover"
+              className="object-cover object-right-bottom"
               style={{ color: 'transparent' }}
             />
           </div>
