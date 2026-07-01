@@ -9,7 +9,7 @@ import CursorGlow from '@/components/CursorGlow';
 export const metadata: Metadata = {
   metadataBase: new URL('https://fiqriagustriawan.vercel.app'),
   verification: {
-    google: '9wJmBf9ZNBkPEagLGyQzKx6dNt6aji5JF0hWzl-wp7c',
+    google: 'tGjJts6uXLp-DqGq7tzca2VirbCFexAtR55iIQi3h7s',
   },
   title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
   description:
