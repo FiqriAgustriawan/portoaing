@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     images: ['/profile_Fiqri-kacamata.jpeg'],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/profile_Fiqri-kacamata.jpeg',
   },
 };
 

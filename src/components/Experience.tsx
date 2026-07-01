@@ -23,7 +23,7 @@ export default function Experience() {
     <section className="py-24" id="experience">
       <p
         className="text-[11px] uppercase tracking-[0.2em] mb-2"
-        style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+        style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)' }}
       >
         03 — Experience
       </p>

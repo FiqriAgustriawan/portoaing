@@ -5,7 +5,7 @@ export default function Skills() {
     <section className="py-24" id="skills">
       <p
         className="text-[11px] uppercase tracking-[0.2em] mb-2"
-        style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+        style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)' }}
       >
         02 — Expertise
       </p>
@@ -28,7 +28,7 @@ export default function Skills() {
         >
           <p
             className="text-[11px] uppercase tracking-[0.15em] mb-1"
-            style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+            style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)' }}
           >
             Backend & Database
           </p>
@@ -52,7 +52,7 @@ export default function Skills() {
               <li key={item} className="flex items-start gap-2.5">
                 <span
                   className="mt-[7px] w-[4px] h-[4px] rounded-full shrink-0"
-                  style={{ backgroundColor: 'var(--text-faint)' }}
+                  style={{ backgroundColor: 'var(--accent)' }}
                 />
                 {item}
               </li>
@@ -70,7 +70,7 @@ export default function Skills() {
         >
           <p
             className="text-[11px] uppercase tracking-[0.15em] mb-1"
-            style={{ color: 'var(--text-faint)', fontFamily: 'var(--font-mono)' }}
+            style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)' }}
           >
             Frontend & DevOps
           </p>
@@ -94,7 +94,7 @@ export default function Skills() {
               <li key={item} className="flex items-start gap-2.5">
                 <span
                   className="mt-[7px] w-[4px] h-[4px] rounded-full shrink-0"
-                  style={{ backgroundColor: 'var(--text-faint)' }}
+                  style={{ backgroundColor: 'var(--accent)' }}
                 />
                 {item}
               </li>

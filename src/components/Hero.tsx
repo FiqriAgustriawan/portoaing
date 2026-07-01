@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Mail, ArrowDown } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './Icons';
+import MagneticButton from './MagneticButton';
 
 export default function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -31,8 +32,8 @@ export default function Hero() {
           {/* Hero Text */}
           <div style={{ fontFamily: 'var(--font-mono)' }}>
             <p
-              className="text-[11px] uppercase tracking-[0.2em] mb-3"
-              style={{ color: 'var(--text-faint)' }}
+              className="text-[11px] uppercase tracking-[0.2em] mb-4 reveal-element font-bold"
+              style={{ color: 'var(--accent)' }}
             >
               Fullstack Software Engineer
             </p>
@@ -40,7 +41,7 @@ export default function Hero() {
               Muhammad Fiqri
               <br />
               Agustriawan
-              <span className="cursor-blink inline-block w-[3px] h-[0.85em] ml-1 align-baseline" style={{ backgroundColor: 'var(--text-primary)' }} />
+              <span className="cursor-blink inline-block w-[3px] h-[0.85em] ml-1 align-baseline" style={{ backgroundColor: 'var(--accent)' }} />
             </h1>
           </div>
         </div>
@@ -73,34 +74,34 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap gap-3 mb-12" style={{ fontFamily: 'var(--font-mono)' }}>
-          <a
-            href="#about"
-            onClick={(e) => handleScroll(e, 'about')}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[13px] font-medium transition-opacity hover:opacity-85"
-            style={{
-              backgroundColor: 'var(--text-primary)',
-              color: 'var(--bg-primary)',
-            }}
-          >
-            <ArrowDown size={11} strokeWidth={2.5} />
-            Learn More
-          </a>
-          <a
-            href="mailto:muhfiqri033@gmail.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[13px] font-medium transition-colors hover:opacity-80"
-            style={{
-              border: '1px solid var(--border-color)',
-              color: 'var(--text-muted)',
-            }}
-          >
-            Get in Touch
-          </a>
+        <div className="flex flex-wrap items-center gap-2.5 mt-6 reveal-element">
+          <MagneticButton intensity={0.2}>
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[11.5px] tracking-[0.04em] hover:-translate-y-[1px] active:scale-[0.98]"
+            >
+              <ArrowDown size={11} strokeWidth={2.5} />
+              Learn More
+            </a>
+          </MagneticButton>
+          
+          <MagneticButton intensity={0.2}>
+            <a
+              href="mailto:muhfiqri033@gmail.com"
+              className="btn-outline inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-[11.5px] tracking-[0.04em] hover:-translate-y-[1px] active:scale-[0.98]"
+            >
+              Get in Touch
+            </a>
+          </MagneticButton>
         </div>
 
         {/* Social Chips Row */}
         <div
-          className="flex flex-wrap gap-2.5"
+          className="flex flex-wrap gap-2.5 mt-12"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           {[
@@ -108,21 +109,18 @@ export default function Hero() {
             { href: 'https://github.com/FiqriAgustriawan', icon: <GithubIcon size={11} />, label: 'GitHub' },
             { href: 'https://twitter.com/fiqriagustriawan', icon: <TwitterIcon size={11} />, label: 'Twitter' },
             { href: 'mailto:muhfiqri033@gmail.com', icon: <Mail size={11} />, label: 'Email' },
-          ].map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target={social.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md text-[12px] transition-all duration-200 hover:opacity-75"
-              style={{
-                border: '1px solid var(--border-color)',
-                color: 'var(--text-muted)',
-              }}
-            >
-              {social.icon}
-              {social.label}
-            </a>
+          ].map(({ href, icon: Icon, label }) => (
+            <MagneticButton intensity={0.15} key={label}>
+              <a
+                href={href}
+                target={label !== 'Email' ? '_blank' : undefined}
+                rel={label !== 'Email' ? 'noopener noreferrer' : undefined}
+                className="btn-outline inline-flex items-center gap-2 px-4 py-2 rounded-md text-[11px] font-medium"
+              >
+                {Icon}
+                {label}
+              </a>
+            </MagneticButton>
           ))}
         </div>
       </div>

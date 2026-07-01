@@ -74,7 +74,7 @@ export default function Header() {
           className="text-sm tracking-tight font-medium hover:opacity-70 transition-opacity"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
-          fiqri.dev
+          fiqr.4
         </Link>
         <div
           className="flex items-center gap-6 text-[13px]"

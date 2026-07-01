@@ -1,13 +1,13 @@
-import { DM_Sans, DM_Mono } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
-export const sans = DM_Sans({
+export const sans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-export const mono = DM_Mono({
-  weight: ['400', '500'],
+export const mono = JetBrains_Mono({
+  weight: ['400', '500', '700', '800'],
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',

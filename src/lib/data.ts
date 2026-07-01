@@ -61,7 +61,7 @@ export const profileData = {
       role: "Software Engineer Intern",
       company: "Ashari Tech",
       companyUrl: "https://ashari.tech",
-      period: "2024 — Present",
+      period: "2025 — 2026",
       description: "Developing modern web applications with Next.js, React, and TypeScript. Building scalable user interfaces and integrating backend APIs."
     },
     {
