@@ -8,6 +8,9 @@ import CursorGlow from '@/components/CursorGlow';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fiqriagustriawan.vercel.app'),
+  verification: {
+    google: '9wJmBf9ZNBkPEagLGyQzKx6dNt6aji5JF0hWzl-wp7c',
+  },
   title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
   description:
     'Fullstack Software Engineer based in Bandung, Indonesia. Intern at Ashari Tech. Specializing in backend engineering, APIs, databases, Next.js, Laravel, Golang, and DevOps automation.',
