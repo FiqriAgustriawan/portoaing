@@ -7,48 +7,69 @@ import ScrollProgress from '@/components/ScrollProgress';
 import CursorGlow from '@/components/CursorGlow';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fiqriagustriawan.vercel.app'),
   title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
   description:
-    'Passionate Fullstack Software Engineer based in Bandung. Specializing in backend engineering — designing APIs, optimizing databases, and building scalable server solutions.',
+    'Fullstack Software Engineer based in Bandung, Indonesia. Intern at Ashari Tech. Specializing in backend engineering, APIs, databases, Next.js, Laravel, Golang, and DevOps automation.',
   authors: [{ name: 'Muhammad Fiqri Agustriawan' }],
   keywords: [
     'Muhammad Fiqri Agustriawan',
-    'Fullstack Engineer',
+    'Fullstack Software Engineer',
     'Backend Engineer',
     'Golang',
     'Laravel',
     'Next.js',
     'DevOps',
     'AI Engineer',
+    'Ashari Tech',
+    'Bandung',
+    'Indonesia',
+    'Software Engineer Indonesia',
   ],
   creator: 'Muhammad Fiqri Agustriawan',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://fiqriagustriawan.vercel.app',
+  },
   openGraph: {
     title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
     description:
-      'Passionate Fullstack Software Engineer based in Bandung. Specializing in backend engineering — designing APIs, optimizing databases, and building scalable server solutions.',
-    url: 'https://fiqrigustriawan.vercel.app',
+      'Fullstack Software Engineer based in Bandung, Indonesia. Intern at Ashari Tech. Specializing in backend engineering, APIs, databases, Next.js, Laravel, Golang, and DevOps automation.',
+    url: 'https://fiqriagustriawan.vercel.app',
     siteName: 'Muhammad Fiqri Agustriawan',
     images: [
       {
         url: '/profile_Fiqri-kacamata.jpeg',
-        width: 150,
-        height: 150,
-        alt: 'Muhammad Fiqri Agustriawan',
+        width: 400,
+        height: 400,
+        alt: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
       },
     ],
     locale: 'en_US',
     type: 'profile',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     site: '@fiqriagustriawan',
     creator: '@fiqriagustriawan',
     title: 'Muhammad Fiqri Agustriawan — Fullstack Software Engineer',
-    description: 'Fullstack Software Engineer specializing in backend engineering.',
+    description: 'Fullstack Software Engineer based in Bandung. Intern at Ashari Tech. Backend, APIs, Golang, Next.js, DevOps.',
     images: ['/profile_Fiqri-kacamata.jpeg'],
   },
   icons: {
     icon: '/profile_Fiqri-kacamata.jpeg',
+    shortcut: '/profile_Fiqri-kacamata.jpeg',
+    apple: '/profile_Fiqri-kacamata.jpeg',
   },
 };
 
